@@ -1,0 +1,18 @@
+server:
+  port: 9011
+  servlet:
+    context-path: /cloud-consumer
+spring:
+  application:
+    name: cloud-consumer1
+
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:9016/eureka
+feign:
+  hystrix:
+    enabled: true

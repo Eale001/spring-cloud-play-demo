@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-cloud-play-zuul" />
+        <module name="spring-cloud-play-producer" />
+        <module name="spring-cloud-play-consumer1" />
+        <module name="spring-cloud-play-config" />
+        <module name="spring-cloud-play-eureka" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-cloud-play-config" options="-parameters" />
+      <module name="spring-cloud-play-consumer1" options="-parameters" />
+      <module name="spring-cloud-play-demo" options="-parameters" />
+      <module name="spring-cloud-play-eureka" options="-parameters" />
+      <module name="spring-cloud-play-producer" options="-parameters" />
+      <module name="spring-cloud-play-zuul" options="-parameters" />
+    </option>
+  </component>
+</project>

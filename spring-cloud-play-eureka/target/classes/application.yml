@@ -1,0 +1,15 @@
+server:
+  port: 9016
+spring:
+  application:
+    name: cloud-eureka
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://${spring.cloud.client.ip-address}:${server.port}
+    fetch-registry: false
+    register-with-eureka: false

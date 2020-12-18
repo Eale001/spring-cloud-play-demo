@@ -1,0 +1,25 @@
+server:
+  port: 9014
+spring:
+  application:
+    name: cloud-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Eale001/config-repository
+          search-paths: neo-config
+          username: eale_zhihui@126.com
+          password: zhihui919650
+    bus:
+      trace:
+        # ������Ϣ����
+        enabled: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defalultZone: http://localhost:9016/eurake/

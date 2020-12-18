@@ -1,0 +1,43 @@
+server:
+  port: 9010
+spring:
+  application:
+    name: cloud-zuul
+
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:9016/eureka/
+
+zuul:
+  retryable: true
+  # 需要忽略的头部信息，不在传播到其他服务
+  sensitive-headers: Access-Control-Allow-Orign
+  ignored-headers: Access-Control-Allow-Orign,H-APP-Id,APPToken
+  routes:
+    consumer1:
+      path: /cloud-consumer/**
+#      url: http://localhost:9011/
+      stripPrefix: false
+      serviceId: cloud-consumer1
+
+ribbon:
+  # 设置路由转发请求的时候，创建请求连接的超时时间
+  readTimeout: 3000
+  # 用来设置路由转发请求的超时时间
+  connectedTimeout: 6000
+  MaxAutoRetries: 2
+  MaxAutoRetriesNextServer: 0
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            # 设置API网关中路由转发请求的HystrixCommand执行超时时间
+            timeoutInMilliseconds: 6000

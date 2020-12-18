@@ -1,0 +1,13 @@
+server:
+  port: 9014
+spring:
+  application:
+    name: cloud-config
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defalultZone: http://localhost:9016/eurake/
