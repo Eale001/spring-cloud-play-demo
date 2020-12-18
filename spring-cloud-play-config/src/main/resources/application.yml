@@ -7,15 +7,18 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Eale001/config-repository
-          search-paths: neo-config
+          uri: https://github.com/Eale001/spring-cloud-play-demo
+          search-paths: config-repo
           username: eale_zhihui@126.com
           password: zhihui919650
-    bus:
-      trace:
-        # ������Ϣ����
-        enabled: true
-
+#    bus:
+#      trace:
+#        enabled: true
+#  rabbitmq:
+#    host: 172.16.63.128
+#    port: 5672
+#    username: admin
+#    password: 123456
 eureka:
   instance:
     prefer-ip-address: true

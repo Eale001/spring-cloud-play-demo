@@ -14,6 +14,7 @@
         <module>spring-cloud-play-consumer1</module>
         <module>spring-cloud-play-zuul</module>
         <module>spring-cloud-play-config</module>
+        <module>spring-cloud-play-producer2</module>
     </modules>
 
     <parent>
@@ -52,6 +53,11 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.73</version>
+        </dependency>
+        <dependency>
+            <groupId>org.xbcx.common.core</groupId>
+            <artifactId>java-server-common-core</artifactId>
+            <version>0.0.2</version>
         </dependency>
     </dependencies>
 

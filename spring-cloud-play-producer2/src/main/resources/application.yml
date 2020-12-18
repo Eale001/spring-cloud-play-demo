@@ -1,0 +1,13 @@
+server:
+  port: 9017
+spring:
+  application:
+    name: cloud-producer2
+
+eureka:
+  instance:
+    ip-address: ${sping.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:9016/eureka/
