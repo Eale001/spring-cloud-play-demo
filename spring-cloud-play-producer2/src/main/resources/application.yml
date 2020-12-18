@@ -3,11 +3,20 @@ server:
 spring:
   application:
     name: cloud-producer2
+  rabbitmq:
+    host: 172.16.63.128
+    port: 5672
+    username: admin
+    password: 123456
 
 eureka:
   instance:
-    ip-address: ${sping.cloud.client.ip-address}:${server.port}
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://localhost:9016/eureka/
+
+management:
+  security:
+    enabled: false

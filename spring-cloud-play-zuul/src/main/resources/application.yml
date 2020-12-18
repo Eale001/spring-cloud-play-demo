@@ -23,6 +23,11 @@ zuul:
 #      url: http://localhost:9011/
       stripPrefix: false
       serviceId: cloud-consumer1
+    consumer2:
+      path: /cloud-consumer/**
+      #      url: http://localhost:9011/
+      stripPrefix: false
+      serviceId: cloud-consumer2
 
 ribbon:
   # 设置路由转发请求的时候，创建请求连接的超时时间

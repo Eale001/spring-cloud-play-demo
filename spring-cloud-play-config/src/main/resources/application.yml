@@ -11,18 +11,23 @@ spring:
           search-paths: config-repo
           username: eale_zhihui@126.com
           password: zhihui919650
-#    bus:
-#      trace:
-#        enabled: true
-#  rabbitmq:
-#    host: 172.16.63.128
-#    port: 5672
-#    username: admin
-#    password: 123456
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 172.16.63.128
+    port: 5672
+    username: admin
+    password: 123456
 eureka:
   instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
-    ip-address: ${spring.cloud.client.ip-address}:${server.port}
   client:
     service-url:
-      defalultZone: http://localhost:9016/eurake/
+      defaultZone: http://localhost:9016/eureka/
+
+management:
+  security:
+    # ˢ��ʱ���رհ�ȫ��֤
+    enabled: false

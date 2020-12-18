@@ -20,6 +20,7 @@ public class CloudProducerRemoteHystrix implements CloudProducerRemote{
 
     @Override
     public String hello(String name) {
-        return null;
+        System.out.println(121212);
+        return "我失败了";
     }
 }
